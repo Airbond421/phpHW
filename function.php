@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-function checkInput($input): bool
+function checkInput(string $input): bool
 {
 	return is_numeric($input) && $input >= 0 && $input < 125;
 }
 
-function printFilteredMovies($movies)
+function printFilteredMovies(array $movies)
 {
 	foreach ($movies as $index => $movie)
 	{
@@ -17,7 +17,7 @@ function printFilteredMovies($movies)
 	}
 }
 
-function filteringMovies($movies, $age): array
+function filteringMovies(array $movies, string $age): array
 {
 	$filteredMovies = [];
 	foreach ($movies as $movie)
