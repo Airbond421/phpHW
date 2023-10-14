@@ -12,10 +12,8 @@ if (!checkInput($input))
 {
 	exit("Not the correct age has been introduced.");
 }
-else
-{
-	$age = $input;
-}
+
+$age = $input;
 
 $filteredMovies = filteringMovies($movies, $age);
 
