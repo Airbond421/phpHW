@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-function checkInput(string $input): bool
+function checkAgeInput(string $input): bool
 {
-	return is_numeric($input) && $input >= 0 && $input < 125;
+	define("MAX_LIFE_SPAN", 125);
+	return is_numeric($input) && $input >= 0 && $input < MAX_LIFE_SPAN;
 }
 
-function printFilteredMovies(array $movies)
+function printMovies(array $movies): void
 {
 	foreach ($movies as $index => $movie)
 	{
@@ -17,7 +18,7 @@ function printFilteredMovies(array $movies)
 	}
 }
 
-function filteringMovies(array $movies, string $age): array
+function filterMovies(array $movies, int $age): array
 {
 	$filteredMovies = [];
 	foreach ($movies as $movie)
